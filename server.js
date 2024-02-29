@@ -1,10 +1,12 @@
 const express = require('express')
 const cors = require('cors')
+const connectDb = require('./database')
 
 const app = express()
 const PORTA = 3333
 app.use(cors())
 
+connectDb()
 app.use(express.json())
 
 const router = require('./route')
